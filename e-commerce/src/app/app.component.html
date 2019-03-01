@@ -1,0 +1,42 @@
+<div class="page">
+  <div class="pageHeader">
+        <div class="logoBoxDemo" [routerLink]="['/']">
+          <h1>{{storeName}}</h1>
+        </div>
+        <div class="hdrGraphic">
+          <img class="frontpic" src="images/beyondpeace_title2.gif" alt="wreak havoc peace sign tshirts" />
+        </div>
+        <div class="whiteBar"></div>
+        <div class="grayBar"></div>
+        <div class="menuBar">
+            <span class="menuItem menuItemDef menuItemFirst">
+                <a class="back-link" [routerLink]="['/']">Home Page</a>
+            </span>
+            <span class="menuItem">
+                <a class="back-link" [routerLink]="['/categories']">Shop</a>
+            </span>
+            <span class="menuItem">
+                <a class="back-link" [routerLink]="['/policies']">Policies</a>
+            </span>
+            <span class="menuItem">
+                <a class="back-link" [routerLink]="['/contact']">Contact Us</a>
+            </span>
+            <span class="menuItem">
+                <a class="back-link" [routerLink]="['/faqs']">FAQs</a>
+            </span>
+            <span class="menuItem menuItemLast">
+                <a class="back-link" [routerLink]="['/cart']">Shopping Cart</a>
+            </span>
+        </div>
+  </div>
+  <div class="mainArea">
+      <div class="menuContentArea">
+            <a *ngFor="let category of categories" (click)="goProductList(category)" class="navhover">{{category.name}}</a>
+            <!-- <a *ngFor="let product of products" (click)="goProductDetail(product)" class="navhover">{{product.name}}</a> -->
+      </div>
+      <div class="mainContentArea">
+            <router-outlet></router-outlet>
+      </div>
+  </div>
+  <div class="footer"><h2>Copyright &copy; {{year}} {{copyright}}</h2></div>
+</div>

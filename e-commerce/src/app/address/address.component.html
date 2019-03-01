@@ -1,0 +1,96 @@
+<title>{{title}}</title>
+
+<form>
+  <fieldset>
+      <legend>Customer</legend>
+
+      <div class="enteraddress">
+          <h3>Billing Address</h3>
+          <span class="h35"></span>
+
+          <div>First Name<span class="req">*</span> <span [hidden]="firstName.valid || firstName.pristine" class="error">Name is required</span></div>
+          <div><input [(ngModel)]="billing.firstName" name="firstName" type="text" maxlength="60" required #firstName="ngModel" /></div>
+
+          <div>Last Name<span class="req">*</span></div>
+          <div><input [(ngModel)]="billing.lastName" name="lastName" type="text" maxlength="60" required /></div>
+
+          <div>Address 1<span class="req">*</span></div>
+          <div><input [(ngModel)]="billing.address1" name="address1" type="text" maxlength="50" required /></div>
+
+          <div>Address 2</div>
+          <div><input [(ngModel)]="billing.address2" name="address2" type="text" maxlength="50" /></div>
+
+          <div>City<span class="req">*</span></div>
+          <div><input [(ngModel)]="billing.city" name="city" type="text" maxlength="40" required /></div>
+
+          <div>State<span class="req">*</span></div>
+          <div>
+            <select [(ngModel)]="billing.state" name="state" required>
+                <option *ngFor="let state of states" [value]="state.value">{{state.name}}</option>
+            </select>
+          </div>
+
+          <div>Zip Code<span class="req">*</span></div>
+          <div><input [(ngModel)]="billing.postalCode" name="postalCode" type="text" minlength="5" maxlength="11" required /></div>
+
+          <div>Country<span class="req">*</span></div>
+          <div>
+            <select [(ngModel)]="billing.country" name="country" required>
+                <option *ngFor="let country of countries" [value]="country.value">{{country.name}}</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="enteraddress shipcol">
+          <h3>Shipping Address</h3>
+          <span class="h35">
+              <input type="checkbox" id="chkSameAsBilling" (click)="copyAddress($event)" />
+              <label for="chkSameAsBilling">Same as billing address</label>
+          </span>
+
+          <div ng-hide="addresses.SameAsBilling">
+              <div>First Name</div>
+              <div><input [(ngModel)]="shipping.firstName" name="shipping.firstName" type="text" maxlength="60" /></div>
+
+              <div>Last Name</div>
+              <div><input [(ngModel)]="shipping.lastName" name="shipping.lastName" type="text" maxlength="60" /></div>
+
+              <div>Address 1</div>
+              <div><input [(ngModel)]="shipping.address1" name="shipping.address1" type="text" maxlength="50" /></div>
+
+              <div>Address 2</div>
+              <div><input [(ngModel)]="shipping.address2" name="shipping.address2" type="text" maxlength="50" /></div>
+
+              <div>City</div>
+              <div><input [(ngModel)]="shipping.city" name="shipping.city" type="text" maxlength="40" /></div>
+
+              <div>State</div>
+              <div>
+                <select [(ngModel)]="shipping.state" name="shipping.state">
+                    <option *ngFor="let state of states" [value]="state.value">{{state.name}}</option>
+                </select>
+              </div>
+
+              <div>Zip Code</div>
+              <div><input [(ngModel)]="shipping.postalCode" name="shipping.postalCode" type="text" minlength="5" maxlength="11" /></div>
+
+              <div>Country</div>
+              <div>
+                <select [(ngModel)]="shipping.country" name="shipping.country">
+                    <option *ngFor="let country of countries" [value]="country.value">{{country.name}}</option>
+                </select>
+              </div>
+          </div>
+      </div>
+
+      <div style="clear: both; height: 20px;"></div>
+
+      <div>Phone<span class="req">*</span></div>
+      <div><input [(ngModel)]="billing.phone" name="phone" type="tel" maxlength="30" pattern="/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/" #ph="ngModel" required /></div>
+
+      <div>Email Address<span class="req">*</span></div>
+      <div><input [(ngModel)]="billing.email" name="email" type="email" maxlength="50" required /></div>
+  </fieldset>
+
+  <p class="button"><a (click)="onSubmit()" class="button round">Continue &gt;&gt;</a></p>
+</form>

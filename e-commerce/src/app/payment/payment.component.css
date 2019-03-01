@@ -1,0 +1,26 @@
+/************************ payment styles **********************/
+.payment fieldset
+{
+    margin-top: 20px;
+}
+.payment fieldset select
+{
+    width: 65px;
+}
+.payment fieldset select.sm
+{
+    width: 95px;
+}
+
+.paybillingaddress 
+{
+    float: left;
+    width: 300px;
+}
+
+.payshippingaddress 
+{
+    float: left;
+    width: 200px;
+}
+

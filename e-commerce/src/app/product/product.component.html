@@ -1,0 +1,54 @@
+<title>{{title}}</title>
+
+<p>
+    <a *ngIf="product?.catId" [routerLink]="['/products', product?.catId]">Back</a>
+</p>
+
+<div class="prodimage">
+    <img [src]="product?.img" width="250px" alt="{{product?.name}}" title="{{product?.name}}" galleryimg="no" />
+</div>
+
+<div class="prodbody">
+    <h1>{{product?.name}}</h1>
+    
+    <p><b>Sku:</b> {{product?.sku}}</p>
+
+    <p [innerHTML]="product?.description"></p>
+
+    <p><b>Price:</b> {{product?.price|currency}}</p>
+
+    <p *ngIf="product?.sizeName">
+        <b>Size: </b> 
+        <span *ngIf="product?.sizeName.indexOf('|') == -1">{{product?.sizeName}}</span>
+        <input type="hidden" name="hfSizeName" *ngIf="product?.sizeName.indexOf('|') > -1" [(ngModel)]="product.sizeName" />
+        <select name="mSizeName" *ngIf="product?.sizeName.indexOf('|') > -1" [(ngModel)]="product.sizeName" required>
+            <option *ngFor="let item of product?.sizeName.split('|')" [value]="item">{{item}}</option>
+        </select>
+    </p>
+
+    <p *ngIf="product?.colorName">
+        <b>Color: </b>
+        <span *ngIf="product?.colorName.indexOf('|') == -1">{{product?.colorName}}</span>
+        <input type="hidden" name="hfColorName" *ngIf="product?.colorName.indexOf('|') > -1" [(ngModel)]="product.colorName" />
+        <select name="mColorName" *ngIf="product?.colorName.indexOf('|') > -1" [(ngModel)]="product.colorName" required>
+            <option *ngFor="let item of product?.colorName.split('|')" [value]="item">{{item}}</option>
+        </select>
+    </p>
+
+    <p>
+        <b>Quantity:</b>
+        <input [(ngModel)]="quantity" name="qt" type="number" maxlength="2" minlength="1" pattern="/^[0-9]*$/" class="qtybox" required />
+    </p>
+    <!--
+        <span ng-show="cartForm.qt.$error.required" class="req">*</span><span ng-show="cartForm.qt.$error.minlength" class="req"> must be at least 1 digits</span><span ng-show="cartForm.qt.$error.maxlength" class="req"> cannot be more than 2 digits</span><span ng-show="cartForm.qt.$error.pattern" class="req"> can only contain digits</span>
+    <p ng-hide="cartForm.$valid">The above items need your attention.</p>
+    -->
+
+    <hr />
+
+    <div>
+        <a (click)="addProduct(product)" class="button round">Add To Cart</a>
+        <a (click)="checkout()" *ngIf="showCheckoutButton" class="button round">Checkout</a>
+    </div>
+</div>
+<div style="clear:both;"></div>

@@ -1,0 +1,15 @@
+<title>{{categoryName}}</title>
+
+<h1>{{categoryName}}</h1>
+
+<div id="prodlist">
+  <a *ngFor="let product of products" (click)="goProductDetail(product)">
+    <div class="prodimg"><img *ngIf="product.img" [src]="product.img" width="95px" alt="{{product.name}}" galleryimg="no" border="0" align="middle" /></div>
+    <div class="prodname">{{product.name}}</div>
+    <div class="prodprice">{{product.price|currency}}</div>
+  </a>
+</div>
+
+<p [hidden]="true">
+  {{categoryId}}
+</p>

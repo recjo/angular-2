@@ -1,0 +1,4 @@
+<title>{{title}}</title>
+<div id="prodlist">
+  <a *ngFor="let category of categories" (click)="goProductsList(category)">{{category.name}}</a>
+</div>

@@ -1,0 +1,138 @@
+/*--------------------------------- P r o d u c t   L i s t -------------------------------*/
+
+#prodlist
+{
+    margin-top: 10px;
+}
+#prodlist a,
+#prodlist a:visited,
+#prodlist a:active
+{
+    display: block;
+    border-bottom: solid 1px #666666;
+    padding: 15px 5px 5px 5px;
+    text-decoration: none;
+    color: #666666;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+}
+#prodlist a:hover
+{
+    color: #ffffff;
+    background-color: gray;
+}
+#prodlist a div
+{
+	display: table-cell;
+}
+#prodlist a div.imgname
+{
+	width: 95px;
+}
+#prodlist a div.prodname
+{
+	width: 475px;
+	padding-left: 15px;
+}
+#prodlist a div.prodprice
+{
+	width: 65px;
+	text-align: right;
+}
+#prodlist .prodName 
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #666666;
+}
+#prodlist .prodPrice 
+{
+    font-size: 12px;
+    color: #BF2932;
+}
+#prodlist .prodimage
+{
+    text-align: center;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 20px;
+    float: left;
+    width: 254px;
+    overflow: hidden;
+}
+#prodlist .prodimage img
+{
+    border: solid 2px #e7e7e7;
+}
+
+
+
+/* a.navhover,
+a.navhover:link,
+a.navhover:visited,
+a.navhover:active
+ {
+	width: 100%;
+	display: block;
+	color: #666666;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	padding-top: 3px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	text-decoration: none;
+    cursor: pointer;
+}
+a.navhover:hover
+{
+	background-color: #000000;
+	color: #EF970F;
+	text-decoration: none;
+} */
+
+
+
+
+
+
+/* #ulList ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+#ulList ul li
+{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#ulList ul li a,
+#ulList ul li a:visited,
+#ulList ul li a:active
+{
+    height: 20px;
+    margin: 0px;
+    margin-bottom: 8px;
+    display: block;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-right-style: solid;
+	padding-top: 3px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	text-decoration: none;
+	color: #000000;
+}
+
+#ulList ul li a:hover
+{
+	background-color: #000000;
+	color: #EF970F;
+	text-decoration: none;
+} */

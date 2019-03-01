@@ -1,0 +1,5 @@
+<title>{{title}}</title>
+<div id="faqtable" *ngFor="let faq of faqs">
+  <div class="faq-question" (click)="faq.faqShow=!faq.faqShow"><span class="qstyle">Q.</span> {{faq.question}}</div>
+  <div class="faq-answer" *ngIf="faq.faqShow">{{faq.answer}}</div>
+</div>

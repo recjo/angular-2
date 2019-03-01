@@ -1,0 +1,75 @@
+/************************ checkout address styles **********************/
+.enteraddress 
+{
+    width: 255px;
+    float: left;
+}
+
+.enteraddress .text-box, .enteraddress .textarea
+{
+    width: 245px;
+}
+
+.enteraddress select
+{
+    width: 248px;
+}
+
+#shipcol
+{
+    margin-left: 20px;
+}
+
+.h35
+{
+    display: block;
+    height: 20px;
+}
+
+
+
+
+
+
+
+a.button,
+a.button:visited
+{
+    display: inline-block;
+	color: #fff !important;
+	text-decoration: none;
+	margin-top: 10px; 
+	padding: 5px;
+	border: none;
+	background-color: #5e5b54;
+	font-weight: bold !important;
+	font-size: 12px !important;
+	font-family: Helvetica,Arial,sans-serif !important;
+	cursor: pointer;
+}
+a.button:hover
+{
+	background-color: #000;
+	color: #e7e7e7 !important;
+}
+.round
+{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+
+input:required
+{
+    box-shadow: none;
+}
+/* input.ng-invalid
+{
+    box-shadow: none;
+} */
+.error
+{
+    color: red;
+}

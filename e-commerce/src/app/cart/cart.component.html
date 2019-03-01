@@ -1,0 +1,70 @@
+<title>{{title}}</title>
+
+<p>{{Message}}</p>
+<table class="cartTable" *ngIf="cart !== undefined && cart?.length > 0">
+  <tr>
+    <th>Product</th><!-- colspan="2"-->
+    <th>Color</th>
+    <th>Size</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Extended</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let cartitem of cart">
+    <!--<td width="100"><img src="/imagesprods/{{cartitem.sku}}/thumb.jpg" width="95px" alt="{{cartitem.name}}" galleryimg="no" border="0"></td>-->
+    <td><a (click)="goToProduct(cartitem.productId)" class="pointer">{{cartitem.name}}</a></td>
+    <td>{{cartitem.colorName}}</td>
+    <td>{{cartitem.sizeName}}</td>
+    <td>{{cartitem.qty}}</td>
+    <td>{{cartitem.price | currency}}</td>
+    <td>{{cartitem.price * cartitem.qty | currency}}</td>
+    <td><a (click)="removeItem(cartitem.id)" class="pointer"><img [src]="'assets/images/delete.gif'" width="11" height="12" alt="delete this item" border="0" /></a></td>
+  </tr>
+  <tr>
+    <td colspan="4"></td>
+    <td>Total</td>
+    <td>{{ cartTotal | currency }}</td>
+    <td></td>
+  </tr>
+  <!-- <tr><td colspan="8">{{cartId}}</td></tr> -->
+</table>
+<p class="button" *ngIf="cart !== undefined && cart?.length > 0"><a (click)="goToAddress()" class="button round">Checkout &gt;&gt;</a></p>
+<h3 *ngIf="cart !== undefined && cart.length > 0">Shippping Chart</h3>
+<table cellpadding="0" cellspacing="0" class="cartTable" *ngIf="cart !== undefined && cart?.length > 0">
+    <tr>
+        <th>Number of Items</th>
+        <th>Charge</th>
+    </tr>
+    <tr>
+        <td>1 - 5</td>
+        <td>$7.00</td>
+    </tr>
+    <tr>
+        <td>6 - 10</td>
+        <td>$8.00</td>
+    </tr>
+    <tr>
+        <td>11 - 15</td>
+        <td>$9.00</td>
+    </tr>
+    <tr>
+        <td>16  - 20</td>
+        <td>$10.00</td>
+    </tr>
+    <tr>
+        <td>21 and up</td>
+        <td>$15.00</td>
+    </tr>
+</table>
+
+<p *ngIf="cart === undefined || cart?.length == 0">Your cart is empty</p>
+
+
+
+
+
+
+
+
+

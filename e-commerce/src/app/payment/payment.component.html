@@ -1,0 +1,87 @@
+<title>{{title}}</title>
+
+<div class="payment">
+
+  <h1>{{title}}</h1>
+
+  <div class="paybillingaddress" *ngIf="billing">
+      <h3>BILLING ADDRESS</h3>
+      {{billing?.firstName}} {{billing?.lastName}}<br />{{billing?.address1}}<br /><span *ngIf="billing.address2">{{billing?.address2}}<br /></span>{{billing?.city}}, {{billing?.state}} {{billing?.postalCode}}<br />{{billing?.phone}}
+  </div>
+
+  <div class="payshippingaddress" *ngIf="shipping?.address1">
+      <h3>SHIPPING ADDRESS</h3>
+      {{shipping?.firstName}} {{shipping?.lastName}}<br />{{shipping?.address1}}<br /><span *ngIf="shipping.address2">{{shipping?.address2}}<br /></span>{{shipping?.city}}, {{shipping?.state}} {{shipping?.postalCode}}
+  </div>
+
+  <div style="clear:both;margin-bottom:15px;"></div>
+
+  <form>
+    <table class="cartTable">
+        <tr>
+            <th>Product</th><!-- colspan="2"-->
+            <th>Color</th>
+            <th>Size</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Extended</th>
+        </tr>
+        <tr *ngFor="let cartitem of cart">
+            <!-- <td width="100"><img src="/imagesprods/{{cartitem.Sku}}/thumb.jpg" width="95" alt="{{cartitem.ProductName}}" galleryimg="no" border="0"></td> -->
+            <td><a (click)="goToProduct(cartitem.productId)" class="pointer">{{cartitem.name}}</a></td>
+            <td>{{cartitem.colorName}}</td>
+            <td>{{cartitem.sizeName}}</td>
+            <td>{{cartitem.qty}}</td>
+            <td>{{cartitem.price | currency}}</td>
+            <td>{{cartitem.price * cartitem.qty | currency}}</td>
+        </tr>
+        <tr class="darkbordertop">
+            <td colspan="5" align="right">Sub-Total</td>
+            <td>{{ cartTotal | currency }}</td>
+        </tr>
+        <tr>
+            <td colspan="5" align="right">Tax</td>
+            <td>{{ taxTotal | currency }}</td>
+        </tr>
+        <tr>
+            <td colspan="5" align="right">
+                Shipping
+                <select [(ngModel)]="shipTotal" name="shipTotal" (change)="calcTotals()" required #selectedShip>
+                    <option *ngFor="let carrier of shipMethods" [value]="carrier.value">{{carrier.name}}</option>
+                </select>
+            </td>
+            <td>{{ shipTotal | currency }}</td>
+        </tr>
+        <tr>
+            <td colspan="5" align="right">Grand Total</td>
+            <td>{{ grandTotal | currency }}</td>
+        </tr>
+    </table>
+
+    <fieldset>
+        <legend>Enter Credit Card Information</legend>
+        <div>
+            <div>Credit Card Number<span class="req">*</span></div>
+            <div><input name="creditCardNumber" type="number" [(ngModel)]="creditCardNumber" maxlength="20" minlength="16" pattern="/^[0-9]*$/" required /></div>
+        </div>
+        <div>
+            <div>Security Code<span class="req">*</span></div>
+            <div><input name="creditCardCcv" type="number" [(ngModel)]="creditCardCcv" maxlength="4" minlength="3" pattern="/^[0-9]*$/" required /></div>
+        </div>
+        <div>
+            <div>Expiration</div>
+            <div>
+                <select name="creditCardExpMo" [(ngModel)]="creditCardExpMo" class="sm" required>
+                    <option *ngFor="let month of expMonths" [value]="month.value">{{month.name}}</option>
+                </select><span class="req">*</span>
+                <select name="creditCardExpYear" [(ngModel)]="creditCardExpYear" required>
+                    <option *ngFor="let year of expYears" [value]="year">{{year}}</option>
+                </select><span class="req">*</span>
+            </div>
+        </div>
+    </fieldset>
+    
+    <p class="button"><a (click)="submitOrder(selectedShip.selectedIndex)" class="button round">Submit Order</a></p>
+  </form>
+
+</div>

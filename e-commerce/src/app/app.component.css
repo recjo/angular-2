@@ -1,0 +1,276 @@
+
+body 
+{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    color: #000000;
+    background-color: #252525;
+}
+.page
+{
+    width: 900px;
+    margin: 0px auto;
+    margin-top: 15px;
+    position: relative;
+}
+
+/*------------------------- H e a d e r ------------------------------------*/
+.pageHeader
+{
+    height: 287px;
+    overflow: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+.logoBox
+{
+    width: 250px;
+    height: 250px;
+    background-color: #000000;
+    float: left;
+    background-position: left top;
+    background-repeat: no-repeat;
+    /* background-image: url('../images/beyondpeace_logo2_250.gif'); */
+    cursor: pointer;
+}
+.logoBoxDemo
+{
+    width: 250px;
+    height: 250px;
+    background-color: gray;
+    float: left;
+}
+.logoBox h1
+{
+    font-size: 18px;
+    font-weight: bold;
+    color: #EF970F;
+    margin: 9px 6px 0px 0px;
+    text-align: right;
+}
+.hdrGraphic
+{
+    height: 250px;
+    float: left;
+}
+.hdrGraphic .frontpic
+{
+    margin-top: 170px;
+}
+.hdr_motocross, .hdr_skate, .hdr_snow, .hdr_surf, .hdr_default
+{
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+/* .hdr_motocross { background-image: url('/images/hdr_motocross_large.jpg'); } */
+/* .hdr_skate { background-image: url('/images/hdr_skate_large.jpg'); } */
+/* .hdr_snow { background-image: url('/images/hdr_snow_large.jpg'); } */
+/* .hdr_surf { background-image: url('/images/hdr_surf_large.jpg'); } */
+/* .hdr_default { background-image: url('/images/hdr_default_large.jpg'); } */
+.hdr_none
+{
+    background-color: Gray;
+}
+.whiteBar
+{
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.grayBar
+{
+    height: 2px;
+    overflow: hidden;
+    background-color: #454545;
+}
+.menuBar
+{
+    height: 24px; /*want 34px height max with padding*/
+    padding-top: 10px;
+    text-align: center;
+    background-color: #1c1c1c;
+    /* background-image: url('../images/menu_tile.gif'); */
+    background-position: left top;
+    background-repeat: repeat-x;
+}
+.menuItem
+{
+    display: inline-block;
+    /* background-image: url('../images/menu_sep.jpg'); */
+    background-position: left top;
+    background-repeat: no-repeat;
+    width: 15%;
+    white-space: nowrap;
+}
+.menuItemDef
+{
+    background-image: none;
+}
+.menuItemFirst
+{
+    padding-left: 0px;
+}
+.menuItemLast
+{
+    padding-right: 0px;
+}
+.menuItem a,
+.menuItem a:visited
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Verdana, Helvetica;
+    font-weight: bold;
+    letter-spacing: -0.07em;
+    font-size: 13px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.menuItem a:hover
+{
+    color: #EF970F;
+}
+
+/*------------------------- M a i n   C o n t e n t ------------------------------------*/
+.mainArea
+{
+    background-color: #ffffff;
+    display: table;
+    width: 100%;
+    min-height: 350px;
+}
+.mainContentArea
+{
+    margin: 0px;
+    display: table-cell;
+    padding: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+.mainContentArea h1
+{
+    color: #EF970F;
+    font-size: 18px;
+    text-transform: uppercase;
+    /* background-image: url('../images/h1arrow.gif'); */
+    background-position: 0px 5px;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px 0px 15px 10px;
+}
+.mainContentArea .redtext
+{
+    color: #BF2932;
+}
+.mainContentArea .graytext
+{
+    color: #999F9B;
+}
+.menuContentArea
+{
+    background-color: #e7e7e7;
+    margin: 0px;
+    padding: 20px;
+    width: 185px;
+    vertical-align: top;
+    display: table-cell;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+/*------------------------- H o v e r  M e n u s ------------------------------------*/
+/*for left-hand navigation category links*/
+a.navhover,
+a.navhover:link,
+a.navhover:visited,
+a.navhover:active
+ {
+	width: 100%;
+	display: block;
+	color: #666666;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	padding-top: 3px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	text-decoration: none;
+    cursor: pointer;
+}
+a.navhover:hover
+{
+	background-color: #000000;
+	color: #EF970F;
+	text-decoration: none;
+}
+
+/*------------------------- F o o t e r ------------------------------------*/
+.footer
+{
+    height: 30px;
+    margin: 0px auto;
+    overflow: hidden;
+    background-color: #252525;
+    text-align: right;
+    position: relative;
+}
+.footer h2
+{
+    position: absolute;
+    top: 25%;
+    right: 5px;
+    height: 12px;
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF;
+    font-size: 9px;
+}
+
+
+/*------------------------- M i s c e l l a n e o u s ------------------------------------*/
+.field-validation-error,
+.field-validation-error span
+{
+    color: #ff3366;
+    margin-left: 5px;
+}
+.field-validation-valid
+{
+    display: none;
+}
+.validation-summary-valid
+{
+    display: none;
+}
+.req
+{
+    color: red;
+    font-weight: bold;
+}
+.pointer
+{
+    cursor: pointer;
+}
+.btnsubmit
+{
+    cursor: pointer;
+}
+input[type=submit][disabled]
+{
+    cursor: default;
+    background-color: lightgray;
+    color: white !important;
+}
+a.adminLink
+{
+    padding: 0px 0px 3px 20px;
+    /* background: url('../images/edit.gif') no-repeat 0px 0px; */
+    display: inline;
+    /* float: right; */
+}
+/* #smallnav {display:none;} */

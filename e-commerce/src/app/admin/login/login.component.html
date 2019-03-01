@@ -1,0 +1,32 @@
+<div>
+    <h1>Logon to your Account</h1>
+</div>
+<div>
+    <form>
+    <div>
+      <label>Username
+        <input type="text" placeholder="Enter Email Address" id="email" [(ngModel)]="email" name="email" required #em="ngModel">
+        <div [hidden]="em.valid || em.pristine">
+          Email is required
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>Password
+        <input type="password" placeholder="Enter Password" id="password1" [(ngModel)]="password1" name="password1" required #pwd1="ngModel">
+        <div [hidden]="pwd1.valid || pwd1.pristine">
+          Password required
+        </div>
+      </label>
+    </div>
+    <div>
+      <div>
+        <a (click)="login()" class="button round">Login</a>
+        <!-- <a (click)="signup()" class="button round">Sign Up</a> -->
+      </div>
+    </div>
+    <div>
+      <p (click)="cancel()" class="simlink">Back to the Main Site</p>
+    </div>
+    </form>
+</div>
